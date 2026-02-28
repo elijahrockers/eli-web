@@ -1,0 +1,47 @@
+---
+const projects = [
+  {
+    title: "DICOM PHI Screening Agent",
+    description:
+      "Agentic pipeline that scans DICOM datasets for PHI using two-layer analysis: header tag inspection against HIPAA Safe Harbor (50+ tags) and OCR-based pixel PHI detection with Claude AI classification. Claude orchestrates the workflow via tool use, aggregating findings into structured de-identification reports.",
+    tags: ["Python", "pydicom", "pytesseract", "Claude API", "FastAPI", "Pydantic"],
+    github: "#",
+  },
+  {
+    title: "Clinical Text-to-SQL Agent (OMOP CDM)",
+    description:
+      "Natural language interface over an OMOP CDM clinical data warehouse, translating plain-English clinical questions into SQL with iterative refinement. Demonstrates the workflow that would sit on top of an Epic Clarity/Caboodle environment in production, using the open OMOP standard with synthetic patient data.",
+    tags: ["Python", "Claude API", "OMOP CDM", "SQLite", "Streamlit"],
+    github: "#",
+  },
+];
+---
+
+<section id="projects" class="py-20 px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold text-slate-900 mb-8">Projects</h2>
+    <div class="grid gap-6 md:grid-cols-2">
+      {projects.map((project) => (
+        <div class="bg-white rounded-lg border border-slate-200 p-6 hover:shadow-md transition-shadow">
+          <h3 class="text-lg font-semibold text-slate-900 mb-3">{project.title}</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">{project.description}</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            {project.tags.map((tag) => (
+              <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 font-medium"
+          >
+            View on GitHub &rarr;
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

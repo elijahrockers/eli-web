@@ -1,0 +1,73 @@
+---
+---
+
+<section id="resume" class="py-20 px-6 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold text-slate-900 mb-8">Resume</h2>
+
+    <div class="space-y-8">
+      <div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">Skills</h3>
+        <div class="flex flex-wrap gap-2">
+          {[
+            "Python", "Claude API", "LLM Orchestration", "DICOM", "Epic (Clarity/Caboodle/Cogito)",
+            "OMOP CDM", "FHIR/HL7", "PHI De-identification", "Machine Learning",
+            "NLP", "Computer Vision", "Docker/Singularity", "Linux", "SQL", "FastAPI",
+          ].map((skill) => (
+            <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-4">Experience</h3>
+        <div class="space-y-6">
+          <div class="border-l-2 border-blue-500 pl-4">
+            <p class="font-medium text-slate-900">Senior Application Analyst</p>
+            <p class="text-sm text-slate-500 mb-2">Houston Methodist — Health Data Science and Analytics &middot; July 2022 – Present</p>
+            <ul class="text-sm text-slate-600 space-y-1 list-disc list-inside">
+              <li>Automated PHI scrubbing, tokenization, and secure inter-institutional data transfers</li>
+              <li>Containerized ML pipelines (CT sarcopenia quantification, patent pending)</li>
+              <li>Led Linux infrastructure adoption and trained data scientists in HPC workflows</li>
+            </ul>
+          </div>
+          <div class="border-l-2 border-slate-300 pl-4">
+            <p class="font-medium text-slate-900">Application Analyst / Senior Application Analyst</p>
+            <p class="text-sm text-slate-500 mb-2">Houston Methodist — Clinical Research Informatics &middot; Feb 2021 – July 2022</p>
+            <ul class="text-sm text-slate-600 space-y-1 list-disc list-inside">
+              <li>Scaled REDCap and XNAT to enterprise-wide platforms, 21 CFR Part 11 compliance</li>
+              <li>Designed HPC environment and led NVIDIA Bright Cluster Manager migration</li>
+            </ul>
+          </div>
+          <div class="border-l-2 border-slate-300 pl-4">
+            <p class="font-medium text-slate-900">Research Data Analyst / Biomedical Engineer</p>
+            <p class="text-sm text-slate-500 mb-2">Houston Methodist — Nantz National Alzheimer Center &middot; July 2015 – Feb 2021</p>
+            <ul class="text-sm text-slate-600 space-y-1 list-disc list-inside">
+              <li>Co-authored publications in high-impact medical journals (neuroimaging)</li>
+              <li>Represented Houston Methodist at international conferences (MGH, Yale, Merck)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">Education</h3>
+        <div class="space-y-2 text-sm text-slate-600">
+          <p><span class="font-medium text-slate-800">Georgia Institute of Technology</span> — MS Computer Science (Expected Dec 2025)</p>
+          <p><span class="font-medium text-slate-800">Texas A&amp;M University</span> — BS Electrical Engineering, 2015</p>
+        </div>
+      </div>
+
+      <div>
+        <a
+          href="/resume.pdf"
+          class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Download Full Resume (PDF)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
