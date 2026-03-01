@@ -42,23 +42,10 @@ const projects = [
 <section id="projects" class="py-20 px-6">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8 max-w-4xl mx-auto">Projects</h2>
-    <div class="overflow-hidden">
-      <div class="marquee-track flex gap-6 w-max hover:[animation-play-state:paused]">
+    <div class="overflow-x-auto snap-x snap-mandatory projects-scroll">
+      <div class="flex gap-6 pb-4">
         {projects.map((project) => (
-          <div class="w-[300px] shrink-0 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 p-6 hover:shadow-md transition-shadow">
-            <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2">{project.title}</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">{project.description}</p>
-            <div class="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs rounded-md font-medium">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
-        {projects.map((project) => (
-          <div class="w-[300px] shrink-0 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 p-6 hover:shadow-md transition-shadow" aria-hidden="true">
+          <div class="w-[300px] shrink-0 snap-start bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 p-6 hover:shadow-md transition-shadow">
             <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2">{project.title}</h3>
             <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">{project.description}</p>
             <div class="flex flex-wrap gap-2">
@@ -76,16 +63,29 @@ const projects = [
 </section>
 
 <style>
-  .marquee-track {
-    animation: marquee 40s linear infinite;
+  .projects-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-slate-400) transparent;
   }
 
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
+  .projects-scroll::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .projects-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .projects-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--color-slate-400);
+    border-radius: 3px;
+  }
+
+  :global(.dark) .projects-scroll {
+    scrollbar-color: var(--color-slate-600) transparent;
+  }
+
+  :global(.dark) .projects-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--color-slate-600);
   }
 </style>

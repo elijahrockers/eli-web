@@ -3,38 +3,44 @@ const publications = [
   {
     title: "ECG-GPT: Large Language Models for ECG Interpretation",
     journal: "European Heart Journal - Digital Health",
+    contributors: "Akshay Khunte; Veer Sangha; Evangelos K Oikonomou; Lovedeep S Dhingra; Arya Aminorroaya; Andreas Coppi; Sumukh Vasisht Shankar; Elijah Rockers; Bobak J Mortazavi; Deepak L Bhatt et al.",
     year: 2026,
-    doi: "https://doi.org/10.1093/ehjdh/ztaf014",
+    doi: "https://doi.org/10.1093/ehjdh/ztag031",
   },
   {
-    title: "Alzheimer-Prone Brain Regions Show Distinct Tau and Amyloid Patterns in Semantic Dementia",
+    title: "In Alzheimer-prone brain regions, metabolism and risk-gene expression are strongly correlated",
     journal: "Brain Communications",
+    contributors: "Fengdan Ye; Quentin Funk; Elijah Rockers; Joshua M Shulman; Joseph C Masdeu; Belen Pascual",
     year: 2022,
-    doi: "https://doi.org/10.1093/braincomms/fcac075",
+    doi: "https://doi.org/10.1093/braincomms/fcac216",
   },
   {
-    title: "Neuroinflammation in the Evolution of Secondary Tauopathy in Semantic Dementia",
+    title: "Neuroinflammation is highest in areas of disease progression in semantic dementia",
     journal: "Brain",
+    contributors: "Belen Pascual; Quentin Funk; Paolo Zanotti-Fregonara; Matthew D Cykowski; Mattia Veronese; Elijah Rockers; Kathleen Bradbury; Meixiang Yu; Mohammad O Nakawah; Gustavo C Román et al.",
     year: 2021,
-    doi: "https://doi.org/10.1093/brain/awab177",
+    doi: "https://doi.org/10.1093/brain/awab057",
   },
   {
-    title: "Posterior Primary Progressive Prosopagnosia",
+    title: "Posterior primary progressive prosopagnosia: Structural and molecular imaging.",
     journal: "Neurology",
+    contributors: "Belen Pascual; Joseph C. Masdeu; Quentin Funk; Paolo Zanotti-Fregonara; Madison Shyer; Elijah Rockers; Paul E. Schulz",
     year: 2020,
-    doi: "https://doi.org/10.1212/WNL.0000000000010676",
+    doi: "https://doi.org/10.1212/wnl.0000000000009001",
   },
   {
-    title: "18F-AV-1451 Tau PET Imaging in Primary Progressive Aphasia",
+    title: "Multimodal 18F-AV-1451 and MRI Findings in Nonfluent Variant of Primary Progressive Aphasia: Possible Insights on Nodal Propagation of Tau Protein Across the Syntactic Network.",
     journal: "Journal of Nuclear Medicine",
+    contributors: "Belen Pascual, Quentin Funk, Paolo Zanotti-Fregonara, Neha Pal, Elijah Rockers, Meixiang Yu, Bryan Spann, Gustavo C. Román, Paul E. Schulz, Christof Karmonik, Stanley H. Appel and Joseph C. Masdeu",
     year: 2019,
-    doi: "https://doi.org/10.2967/jnumed.118.221366",
+    doi: "https://doi.org/10.2967/jnumed.118.225508",
   },
   {
-    title: "3D T1-Weighted Gadolinium DCE-MRI for Assessment of Knee Joint Cartilage",
+    title: "Quantitative Analysis of 3D T1‐Weighted Gadolinium (Gd) DCE‐MRI with Different Repetition Times",
     journal: "Lecture Notes in Computer Science",
+    contributors: "Elijah Rockers, Maria B. Pascual, Sahil Bajaj, Joseph C. Masdeu & Zhong Xue",
     year: 2016,
-    doi: "https://doi.org/10.1007/978-3-319-47157-0_26",
+    doi: "https://doi.org/10.1007/978-3-319-43775-0_23",
   },
 ];
 ---
@@ -69,7 +75,8 @@ const publications = [
           >
             {pub.title}
           </a>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">{pub.journal}, {pub.year}</p>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1"><em>{pub.journal}</em>, {pub.year}</p>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1" set:html={pub.contributors.replace(/Elijah Rockers/g, '<strong class="text-slate-700 dark:text-slate-200">Elijah Rockers</strong>')} />
         </div>
       ))}
     </div>
